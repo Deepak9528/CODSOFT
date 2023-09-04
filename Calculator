@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    char exit;
+    while (exit != '$')
+    {
+        char op;
+        double num1, num2;
+        cout << "Enter the Operator : ";
+        cin >> op;
+        if (op == '$')
+        {
+            exit == '$';
+            cout << "ended";
+            break;
+        }
+        cout << "Enter two numbers one by one : ";
+        cin >> num1 >> num2;
+        switch (op)
+        {
+        case '+':
+            cout << num1 << " + " << num2 << " = " << (num1 + num2) << endl;
+            cout << "Press $ to exit" << endl;
+            break;
+        case '-':
+            cout << num1 << " - " << num2 << " = " << (num1 - num2) << endl;
+            cout << "Press $ to exit" << endl;
+            break;
+        case '*':
+            cout << num1 << " * " << num2 << " = " << (num1 * num2) << endl;
+            cout << "Press $ to exit" << endl;
+            break;
+        case '/':
+            if (num2 != 0.0)
+            {
+                cout << num1 << " / " << num2 << " = " << (num1 / num2) << endl;
+                cout << "Press $ to exit" << endl;
+            }
+            else
+            {
+                cout << "Divide by zero situation" << endl;
+                cout << "Press $ to exit" << endl;
+            }
+            break;
+        case '%':
+            cout << num1 << " % " << num2 << " = " << ((int)num1 % (int)num2) << endl;
+            cout << "Press $ to exit" << endl;
+            break;
+        default:
+            cout << op << " is an invalid operator" << endl;
+        }
+    }
+    return 0;
+}
